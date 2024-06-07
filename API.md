@@ -107,7 +107,7 @@ POST http://localhost:8080/usuarios
   "email": "jose@example.com"
 }
 
-## 5 PUT /usuarios
+## 5 PUT /usuarios{id}
 
 Atualiza os dados de um usuário existente.
 
