@@ -12,8 +12,9 @@ Retorna a lista de notícias disponíveis.
 
 **Exemplo de Requisição:**
 
-```http
 GET http://localhost:8080/noticias
+
+**Exemplo de Resposta:**
 
 {
   "_embedded": {
@@ -37,7 +38,15 @@ GET http://localhost:8080/noticias
   }
 }
 
+## 2. GET /noticias/{id}
+
+Retorna detalhes de uma notícia específica pelo ID.
+
+**Exemplo de Requisição:**
+
 GET http://localhost:8080/noticias/1
+
+**Exemplo de Resposta:**
 
 {
   "id_Noticia": 1,
@@ -52,8 +61,15 @@ GET http://localhost:8080/noticias/1
   }
 }
 
+## 3. GET /usuarios
+
+Retorna a lista de usuários registrados.
+
+**Exemplo de Requisição:**
 
 GET http://localhost:8080/usuarios
+
+**Exemplo de Resposta:**
 
 {
   "usuarios": [
@@ -70,6 +86,12 @@ GET http://localhost:8080/usuarios
   ]
 }
 
+## 4. POST /usuarios
+
+Cria um novo usuário.
+
+**Exemplo de Requisição:**
+
 POST http://localhost:8080/usuarios
 
 {
@@ -77,10 +99,47 @@ POST http://localhost:8080/usuarios
   "email": "jose@example.com"
 }
 
+**Exemplo de Resposta:**
+
 {
   "id": 3,
   "nome": "José",
   "email": "jose@example.com"
 }
+
+## 5 PUT /usuarios
+
+Atualiza os dados de um usuário existente.
+
+**Exemplo de Requisição:**
+
+PUT http://localhost:8080/usuarios/1
+
+{
+  "nome": "João Silva",
+  "email": "joao.silva@example.com"
+}
+
+**Exemplo de Resposta:**
+
+{
+  "id": 1,
+  "nome": "João Silva",
+  "email": "joao.silva@example.com"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
