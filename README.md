@@ -1,11 +1,86 @@
-# Sample Snack app
+# API Notícias e Usuários
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+API para obter informações sobre notícias e gerenciar usuários.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+---
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+## Endpoints
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+### 1. GET /noticias
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+Retorna a lista de notícias disponíveis.
+
+**Exemplo de Requisição:**
+
+```http
+GET http://localhost:8080/noticias
+
+{
+  "_embedded": {
+    "noticiaModelList": [
+      {
+        "id_Noticia": 1,
+        "nm_Titulo": "Exemplo de Título de Notícia",
+        "nm_Subtitulo": "Exemplo de Subtítulo de Notícia",
+        "dt_Noticia": "2024-06-07",
+        "ds_Imagem": "https://example.com/image.jpg",
+        "ds_Link": "https://example.com/noticia",
+        "_links": {
+          "self": { "href": "http://localhost:8080/noticias/1" },
+          "noticias": { "href": "http://localhost:8080/noticias" }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": { "href": "http://localhost:8080/noticias" }
+  }
+}
+
+GET http://localhost:8080/noticias/1
+
+{
+  "id_Noticia": 1,
+  "nm_Titulo": "Exemplo de Título de Notícia",
+  "nm_Subtitulo": "Exemplo de Subtítulo de Notícia",
+  "dt_Noticia": "2024-06-07",
+  "ds_Imagem": "https://example.com/image.jpg",
+  "ds_Link": "https://example.com/noticia",
+  "_links": {
+    "self": { "href": "http://localhost:8080/noticias/1" },
+    "noticias": { "href": "http://localhost:8080/noticias" }
+  }
+}
+
+
+GET http://localhost:8080/usuarios
+
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "João",
+      "email": "joao@example.com"
+    },
+    {
+      "id": 2,
+      "nome": "Maria",
+      "email": "maria@example.com"
+    }
+  ]
+}
+
+POST http://localhost:8080/usuarios
+
+{
+  "nome": "José",
+  "email": "jose@example.com"
+}
+
+{
+  "id": 3,
+  "nome": "José",
+  "email": "jose@example.com"
+}
+
+
