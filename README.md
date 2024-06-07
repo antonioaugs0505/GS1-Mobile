@@ -6,3 +6,6 @@
 
 Link para video do aplicativo rodando
 https://www.youtube.com/watch?v=oSI0fkmI4J4
+
+Link do repositorio
+https://github.com/antonioaugs0505/GS1-Mobile
